@@ -1,0 +1,27 @@
+
+
+@mixin box-shadow($x: $default-shadow-x, $y: $default-shadow-y, $blur: $default-shadow-blur, $color: $default-shadow-color) {
+  -webkit-box-shadow: $x $y $blur $color;
+  -moz-box-shadow: $x $y $blur $color;
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin transition($property: $default-transition-property, $duration: $default-transition-duration, $timing: $default-transition-timing) {
+  transition: $property $duration $timing;
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row() {
+  display: flex;
+  flex-direction: row;
+}

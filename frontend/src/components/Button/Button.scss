@@ -1,0 +1,103 @@
+// Button.scss
+
+.btn-primary,
+.btn-secondary,
+.btn-outline {
+  all: unset;
+}
+
+.btn {
+  all: unset;
+  border-radius: 0 !important;
+  outline: none !important;
+  display: inline-block;
+  width: 12em;
+  height: 2.8em;
+  padding: 1em 2em;
+  font-size: 1.6em;
+  font-weight: 200 !important;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  @include transition();
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: $btn-primary-disabled;
+    cursor: not-allowed;
+  }
+
+  // Primary button style
+  &.btn-primary {
+    background-color: $btn-primary-normal;
+    border-color: $btn-primary-normal;
+    color: $neutral-white;
+    position: absolute;
+    bottom: 0;
+
+    &:hover:not(:disabled) {
+      background-color: $btn-primary-hover;
+      border-color: $btn-primary-hover;
+      color: $neutral-white;
+    }
+
+    &:active:not(:disabled) {
+      background-color: $btn-primary-normal;
+      border-color: $btn-primary-normal;
+    //   scale: 0.98;
+      .btn-icon {
+        color: $neutral-white;
+        scale: 1.2;
+      }
+    }
+  }
+  &:hover:not(:disabled) {
+    .btn-icon {
+      color: $btn-primary-normal;
+    }
+  }
+
+  // Secondary button style
+  &.btn-secondary {
+    background-color: #6c757d;
+    color: #ffffff;
+    border-color: #6c757d;
+
+    &:hover:not(:disabled) {
+      background-color: #5a6268;
+      border-color: #545b62;
+    }
+
+    &:active:not(:disabled) {
+      background-color: #545b62;
+      border-color: #4e555b;
+    }
+  }
+
+  &-icon {
+    font-size: 2.4em;
+    margin-left: 0.5em;
+    @include transition();
+  }
+
+  // Outlined button style
+//   &.btn-outline {
+//     background-color: transparent;
+//     color: #007bff;
+//     border-color: #007bff;
+
+//     &:hover:not(:disabled) {
+//       background-color: #007bff;
+//       color: #ffffff;
+//     }
+
+//     &:active:not(:disabled) {
+//       background-color: #0056b3;
+//       border-color: #0056b3;
+//       color: #ffffff;
+//     }
+//   }
+}

@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import "./Header.scss";
-import profilePic from "../../assets/profile.jpeg";
+import logo from "../../assets/profile.jpeg";
 
 function Header() {
   return (
     <header className="header">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light ">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            <img src={profilePic} alt="Profile picture of Dave Ejezie" />
+            <img className="header-logo" src={logo} alt="Profile picture of Dave Ejezie" style={{ width: '2em', height: '2em', color: 'red' }} />
           </Link>
           <button
             className="navbar-toggler"
@@ -30,6 +30,11 @@ function Header() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/about">
+                  About
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/portfolio">
                   Portfolio
                 </Link>
               </li>

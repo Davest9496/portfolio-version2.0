@@ -1,0 +1,94 @@
+.home {
+  .hero {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    @include flex-center();
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('../../assets/Bitmap@2x.svg');
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+    }
+
+    .hero-text {
+        margin-right: 2em;
+        margin-bottom: 1em !important;
+    }
+
+    .hero-content {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 2;
+      text-align: left;
+      color: $neutral-black;
+      background-color: $neutral-white;
+      padding: 4rem 0;
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .main-content {
+    padding: 2rem;
+  }
+}
+
+// .about {
+//    display: flex;
+//   flex-direction: column;
+//   height: vh;
+// //   border: 1px solid black;
+//     position: relative;
+
+// }
+
+
+// .about-image {
+//   width: 80%;
+//   height: 50em;
+// //   border-radius: 10px;
+// }
+
+// .about-text-box {
+//  position: relative;
+//  height: auto;
+ 
+//   padding: 20px 0; // Add some padding to give space for the lines
+
+//   &::before,
+//   &::after {
+//     content: '';
+//     position: absolute;
+//     left: 0;
+//     right: 0;
+//     height: 1px; // Adjust the thickness of the line as needed
+//     width: 70%;
+//     background-color: #000; // Adjust the color as needed
+//   }
+
+//   &::before {
+//     top: 0;
+//   }
+
+//   &::after {
+//     bottom: 0;
+//   }
+// }
+
+

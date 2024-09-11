@@ -1,0 +1,50 @@
+// Primary Colors
+$primary-color: rgb(95, 180, 162);
+
+// Secondary Colors
+$secondary-color: rgb(32, 58, 76);
+
+// Tertiary Colors
+$tertiary-color: rgb(51, 50, 61);
+
+// Background Colors
+$background-color: rgb(242, 242, 242);
+
+// Neutral Colors
+$neutral-white: #FFFFFF;
+$neutral-grey: #EAEAEB;
+$neutral-black: #33323D;
+
+// Button Colors
+$btn-primary-normal: #203A4C;
+$btn-primary-hover: $primary-color;
+$btn-primary-disabled: $neutral-grey;
+
+$btn-secondary-normal: $neutral-white;
+$btn-secondary-hover: $neutral-black;
+$btn-secondary-disabled: $neutral-white;
+
+// Border Colors
+$primary-border: $neutral-black;
+$secondary-border: $neutral-grey;
+
+// Text Colors
+$primary-text-color: #33323D;
+$secondary-text-color: #FAFAFA;
+
+// Text Field Colors
+$text-field-color: rgb(234, 234, 235);
+
+// Error Colors
+$error-color:  rgb(244, 48, 48);
+
+// Default Shadow
+$default-shadow-x: 0;
+$default-shadow-y: 2px;
+$default-shadow-blur: 4px;
+$default-shadow-color: rgba($neutral-black, 0.1);
+
+// Default Transition
+$default-transition-property: all;
+$default-transition-duration: 0.3s;
+$default-transition-timing: ease-in-out;

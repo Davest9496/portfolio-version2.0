@@ -1,0 +1,20 @@
+.about {
+    height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-bottom: 10em;
+}
+
+.about-image {
+  width: 50%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.about-text {
+    width: 70% ;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
