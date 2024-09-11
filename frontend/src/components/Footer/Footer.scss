@@ -1,13 +1,12 @@
 .footer {
-    background-color: $neutral-black;
-    color: rgba($neutral-grey, .5);
+    background-color: $neutral-grey;
+    color: rgba($neutral-black, .5);
 
     &-title {
         all: unset;
-        color: $neutral-white;
         text-transform: uppercase;
         font-family: 'Ibarra Real Nova', serif;
-        color: rgba($neutral-grey, .5);
+        color: rgba($neutral-black, .7);
         font-size: 1em;
         font-weight: 400;
     }
@@ -21,7 +20,29 @@
             font-family: 'Public Sans', sans-serif;
             font-size: .8em;
             font-weight: 200;
-            color: rgba($neutral-grey, .5);
+            color: rgba($neutral-black, .7);
         }
+    }
+
+    & hr {
+        border: 1px solid rgba($neutral-black, .7);
+        margin-bottom: 3em;
+    }
+
+    &-logo {
+        width: 40%;
+        height: auto;
+    }
+
+    &-logo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-icon {
+        margin-right: .5em;
+        font-size: 1.5em;
     }
 }
