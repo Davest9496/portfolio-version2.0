@@ -62,9 +62,9 @@
 
   // Secondary button style
   &.btn-secondary {
-    background-color: #6c757d;
-    color: #ffffff;
-    border-color: #6c757d;
+    background-color: $btn-secondary-normal;
+    color: $primary-text-color;
+    border-color: $primary-border;
 
     &:hover:not(:disabled) {
       background-color: #5a6268;
@@ -72,8 +72,9 @@
     }
 
     &:active:not(:disabled) {
-      background-color: #545b62;
-      border-color: #4e555b;
+      background-color: $btn-secondary-normal;
+      border-color: $primary-border;
+      color: $primary-text-color;
     }
   }
 

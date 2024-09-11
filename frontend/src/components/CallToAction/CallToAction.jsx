@@ -7,7 +7,7 @@ const CallToAction = () => {
     return (
         <div className="call-to-action">
             <h2>Interested in working <br /> on a project together?</h2>
-            <div style={{ width: '33.33%', height: '1px', backgroundColor: '#000', margin: '20px 0', opacity: '0.3' }}></div>
+            <div className="call-to-action-divider"></div>
             <Link to="/contact">
                 <Button
                     className="btn-secondary"

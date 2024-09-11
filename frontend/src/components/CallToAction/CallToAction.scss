@@ -5,4 +5,13 @@
     align-items: center;
     justify-content: space-between;
     height: auto;
-}
+    margin-bottom: $default-margin;
+
+    & div {
+        width: 33.33%;
+        height: 1px;
+        background-color: #000;
+        margin: 20px 0;
+        opacity: 0.2;
+    }   
+}   

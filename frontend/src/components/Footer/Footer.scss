@@ -1,0 +1,27 @@
+.footer {
+    background-color: $neutral-black;
+    color: rgba($neutral-grey, .5);
+
+    &-title {
+        all: unset;
+        color: $neutral-white;
+        text-transform: uppercase;
+        font-family: 'Ibarra Real Nova', serif;
+        color: rgba($neutral-grey, .5);
+        font-size: 1em;
+        font-weight: 400;
+    }
+
+    &-list {
+        list-style-type: none;
+        padding-left: 0;
+
+        a {
+            text-decoration: none;
+            font-family: 'Public Sans', sans-serif;
+            font-size: .8em;
+            font-weight: 200;
+            color: rgba($neutral-grey, .5);
+        }
+    }
+}
