@@ -22,10 +22,15 @@ function Home() {
               and I<br /> love building pixel
               <br /> perfect websites!
             </h1>
-            <Link to="/contact">
+            <Link to="/about">
               <Button
-                className="btn-primary"
-                onClick={() => (window.location.href = "/contact")}
+                className="btn-primary align-bottom-left"
+                onClick={() => {
+                  const aboutSection = document.querySelector('.about');
+                  if (aboutSection) {
+                    aboutSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 type="button"
                 disabled={false}
               >

@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { SiCredly } from "react-icons/si";
 import "./Footer.scss";
-import logo from "../../assets/D.svg";
+import logo from "../../assets/D-2.svg";
 
 
 const Footer = () => {
   return (
     <footer className="footer py-4">
-      <Container>
+      <Container className="footer-container">
         <Row>
           <Col md={4}>
             <h5 className="footer-title">Socials</h5>
@@ -72,6 +72,8 @@ const Footer = () => {
           <Col md={4}>
             <div className="footer-logo-container">
               <img src={logo} alt="Logo image" className="footer-logo" />
+              <p className="footer-logo-text">Developed by Dave Ejezie <br /> 
+              Design Inspired by <a href="https://www.frontendmentor.io" target="_blank" rel="noopener noreferrer">Frontend Mentor</a> </p>
             </div>
           </Col>
         </Row>

@@ -1,6 +1,15 @@
 .footer {
     background-color: $neutral-grey;
     color: rgba($neutral-black, .5);
+   
+
+    &-container {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: space-between;
+        justify-content: space-between;
+    }
 
     &-title {
         all: unset;
@@ -29,16 +38,27 @@
         margin-bottom: 3em;
     }
 
-    &-logo {
-        width: 40%;
-        height: auto;
-    }
-
     &-logo-container {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        // align-items: center;
         justify-content: center;
+    }
+
+      &-logo {
+        width: 20%;
+        height: auto;
+
+        &-text {
+            font-size: .8em;
+            font-weight: 200;
+            color: rgba($neutral-black, .7);
+        }
+
+        &-text a {
+            text-decoration: none;
+            color: rgba($neutral-black, .7);
+        }
     }
 
     &-icon {

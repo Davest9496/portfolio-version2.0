@@ -1,0 +1,32 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    position: relative;
+
+    &-label {
+        all: unset;
+        font-size: 1em;
+        font-weight: 600;
+    }
+
+    &-control {
+        all: unset;
+        border: 1px solid $primary-border;
+        border-radius: 0 !important;
+        padding: 1em !important;
+        font-size: .9em !important;
+        background-color: $text-field-color !important;
+        color: rgba($primary-text-color, 0.4) !important;
+        width: 100%;
+        box-sizing: border-box;
+        outline: none !important;
+        @include transition();
+    }
+
+    &-control:focus {
+        border: 1px solid $secondary-color !important;
+        outline: none !important;
+        box-shadow: 0 0 0 1px $secondary-color !important;
+    }
+}
