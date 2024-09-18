@@ -1,6 +1,8 @@
 #contact {
-    padding: 3em 5em;
-    // margin: 0 !important;
-
     
+    & .container {
+        & .row {
+            padding: 0 .8em;
+        }
+    }
 }

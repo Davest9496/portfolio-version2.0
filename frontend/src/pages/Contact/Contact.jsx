@@ -5,10 +5,10 @@ import Forms from "../../components/Forms/Forms";
 function Contact() {
     return (
       <section id="contact">
-        <div className="container" style={{ border: "1px solid red" }}>
-          <div className="row" style={{ border: "1px solid blue" }}>
+        <div className="container">
+          <div className="row">
             <hr style={{ margin: "3em 0" }} />
-            <div className="col-md-6" style={{ border: "1px solid green" }}>
+            <div className="col-md-6">
               <div className="get-in-touch">
                 <h1>Get In Touch</h1>
               </div>

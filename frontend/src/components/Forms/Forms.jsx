@@ -35,7 +35,7 @@ function Forms() {
               className="form-control"
               id="message"
               rows="5"
-              placeholder="How can I help?"
+              placeholder="Thanks for reaching out... How can I help?"
             ></textarea>
           </div>
           <Button className="btn btn-primary" type="submit">
