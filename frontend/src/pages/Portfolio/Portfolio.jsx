@@ -1,10 +1,16 @@
+import { useParams } from "react-router-dom";
+import { projects } from "../../data/ProjectData";
 import PortfolioItem from "./PortfolioItem";
-// import PropTypes from "prop-types";
-import { projects } from "../../App";
-
+import Projects from "../Projects/Projects";
 
 const Portfolio = () => {
-  
+  const { id } = useParams();
+  console.log("Current ID from URL params:", id);
+
+  if (id) {
+    const project = projects.find((p) => String(p.id) === id);
+    return <Projects project={project} />;
+  }
 
   return (
     <section className="container">

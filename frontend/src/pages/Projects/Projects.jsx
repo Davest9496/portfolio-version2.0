@@ -3,25 +3,18 @@ import PropTypes from "prop-types";
 
 const Projects = ({ projects }) => {
   const { id } = useParams();
-  console.log("Current ID from URL params:", id);
-  console.log("Projects array:", projects);
-  console.log(
-    "Project IDs available:",
-    projects.map((p) => p.id)
-  );
 
   // Check if id is undefined or null
   if (id == null) {
     return (
       <div className="container mt-5">
         <h1>Error: Project ID is missing</h1>
-        <p>URL parameter 'id' is not present.</p>
+        <p>URL parameter &quot;id&quot; is not present.</p>
       </div>
     );
   }
 
   const project = projects.find((p) => p.id.toString() === id.toString());
-  console.log("Found project:", project);
 
   if (!project) {
     return (
@@ -44,7 +37,7 @@ const Projects = ({ projects }) => {
           alt={project.title}
           className="img-fluid my-4"
         />
-        <p>{project.fullDescription}</p>
+        <p>{project.about}</p>
         {project.technologies && (
           <div>
             <h2>Technologies Used</h2>
