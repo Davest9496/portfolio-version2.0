@@ -10,6 +10,7 @@ import bookmark3 from "../assets/detail/desktop/image-bookmark-preview-2@2x.jpg"
 import insure from "../assets/portfolio/desktop/image-portfolio-insure@2x.jpg";
 import insure1 from "../assets/detail/desktop/image-insure-hero@2x.jpg";
 import insure2 from "../assets/detail/desktop/image-insure-preview-1@2x.jpg";
+import insure3 from "../assets/detail/desktop/image-insure-preview-2@2x.jpg";
 import fylo from "../assets/portfolio/desktop/image-portfolio-fylo@2x.jpg";
 import fylo1 from "../assets/detail/desktop/image-fylo-hero@2x.jpg";
 import fylo2 from "../assets/detail/desktop/image-fylo-preview-1@2x.jpg";
@@ -51,6 +52,7 @@ export const projects = [
     image: insure,
     image1: insure1,
     image2: insure2,
+    image3: insure3,
     title: "Insure",
     description:
       "This was a small project which mostly consisted of HTML and CSS. I built a fully-responsive landing page. The only JavaScript this project required was to enable the toggling of the mobile navigation.",

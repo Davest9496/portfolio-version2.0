@@ -1,5 +1,9 @@
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Button from "../../components/Button/Button";
+import CallToAction from "../../components/CallToAction/CallToAction";
 import PropTypes from "prop-types";
+import "./Projects.scss";
 
 const Projects = ({ projects }) => {
   const { id } = useParams();
@@ -31,33 +35,54 @@ const Projects = ({ projects }) => {
   return (
     <section className="project-details" id={`project-${project.id}`}>
       <div className="container mt-5">
-        <h1>{project.title}</h1>
         <img
-          src={project.image}
+          src={project.image1}
           alt={project.title}
-          className="img-fluid my-4"
+          className="img-fluid mb-5"
         />
-        <p>{project.about}</p>
-        {project.technologies && (
-          <div>
-            <h2>Technologies Used</h2>
-            <ul>
-              {project.technologies.map((tech, index) => (
-                <li key={index}>{tech}</li>
-              ))}
-            </ul>
+        <div className="row mt-5">
+          <div className="col-md-6">
+            <div className="project-details-text">
+              <h2>{project.title}</h2>
+              <p>{project.about}</p>
+              {project.technologies && (
+                <div>
+                  <h2>Technologies Used</h2>
+                  <ul>
+                    {project.technologies.map((tech, index) => (
+                      <li key={index}>{tech}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {project.link && (
+                <Link to={project.link} target="_blank" rel="noopener noreferrer">
+                  <Button className="btn-secondary mt-3" type="button">
+                    Visit Website
+                  </Button>
+                </Link>
+              )}
+            </div>
           </div>
-        )}
-        {project.link && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary mt-3"
-          >
-            View Project
-          </a>
-        )}
+          <div className="col-md-6">
+            <h3>Project Background</h3>
+            <p>{project.background}</p>
+            <h3>Challenges</h3>
+            <p>{project.challenges}</p>
+            <h3>Static Previews</h3>
+            <img
+              src={project.image2}
+              alt={project.title}
+              className="img-fluid my-4"
+            />
+            <img
+              src={project.image3}
+              alt={project.title}
+              className="img-fluid my-4"
+            />
+          </div>
+        </div>
+        <CallToAction />
       </div>
     </section>
   );

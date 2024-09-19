@@ -2,8 +2,9 @@
 @import "bootstrap/scss/bootstrap";
 
 // Custom mixins and variables
-@import "mixins";
-@import "variables";
-@import "typography";
+@import "base";
 @import "layout";
+@import "mixins";
+@import "typography";
 @import "utilities";
+@import "variables";
