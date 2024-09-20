@@ -1,30 +1,68 @@
-.project-details {
+.project {
+  &-details {
     &-text {
-height: auto;
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  position: relative;
-  padding: 3em 0;
+      @include flex-column;
+      width: 70%;
+      position: relative;
+      padding: 3em 0;
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 1px;
-    width: 100%;
-    background-color: #000;
-    opacity: 0.2;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      &::before { top: 0; }
+      &::after { bottom: 0; }
+    }
   }
 
-  &::before {
-    top: 0;
+  &-technologies {
+    @include flex-row;
+    align-items: flex-start;
+    width: fit-content;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0;
+
+    &-item {
+      display: inline-block;
+      color: $primary-color;
+      margin-bottom: 0.5em;
+      padding: 0.5em 0.1em;
+
+      &:not(:last-child)::after {
+        content: "/";
+        margin: 0 0.5em;
+        color: $primary-color;
+      }
+    }
   }
 
-  &::after {
-    bottom: 0;
+  &-background {
+    &-title {
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 1em;
+    }
   }
-}}
+
+  &-navigation {
+    &-link {
+      @include flex-row;
+      align-items: center;
+      width: 100%;
+      padding: 1em 0;
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}
+
+.arrow {
+  font-size: 1.5rem;
+}

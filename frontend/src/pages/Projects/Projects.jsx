@@ -4,6 +4,7 @@ import Button from "../../components/Button/Button";
 import CallToAction from "../../components/CallToAction/CallToAction";
 import PropTypes from "prop-types";
 import "./Projects.scss";
+import { GrPrevious, GrNext } from "react-icons/gr";
 
 const Projects = ({ projects }) => {
   const { id } = useParams();
@@ -47,16 +48,21 @@ const Projects = ({ projects }) => {
               <p>{project.about}</p>
               {project.technologies && (
                 <div>
-                  <h2>Technologies Used</h2>
-                  <ul>
+                  <ul className="project-technologies">
                     {project.technologies.map((tech, index) => (
-                      <li key={index}>{tech}</li>
+                      <li className="project-technologies-item" key={index}>
+                        {tech}
+                      </li>
                     ))}
                   </ul>
                 </div>
               )}
               {project.link && (
-                <Link to={project.link} target="_blank" rel="noopener noreferrer">
+                <Link
+                  to={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button className="btn-secondary mt-3" type="button">
                     Visit Website
                   </Button>
@@ -65,11 +71,9 @@ const Projects = ({ projects }) => {
             </div>
           </div>
           <div className="col-md-6">
-            <h3>Project Background</h3>
-            <p>{project.background}</p>
-            <h3>Challenges</h3>
-            <p>{project.challenges}</p>
-            <h3>Static Previews</h3>
+            <h3 className="project-background-title">Project Background</h3>
+            <p className="project-background">{project.background}</p>
+            <h3 className="project-background-title">Static Previews</h3>
             <img
               src={project.image2}
               alt={project.title}
@@ -82,7 +86,48 @@ const Projects = ({ projects }) => {
             />
           </div>
         </div>
-        <CallToAction />
+
+        {/* CAROUSEL NAVIGATION */}
+        <div className="project-navigation border-top border-bottom my-5">
+          <div className="row">
+            <div className="col-md-6 border-end">
+              {project.id > 1 && (
+                <Link
+                  to={`/project/${project.id - 1}`}
+                  className="project-navigation-link prev"
+                >
+                  <span className="arrow">
+                    <GrPrevious />
+                  </span>
+                  <div className="px-4">
+                    <h4>{projects[project.id - 2].title}</h4>
+                    <p>Previous Project</p>
+                  </div>
+                </Link>
+              )}
+            </div>
+            <div className="col-md-6 ">
+              {project.id < projects.length && (
+                <Link
+                  to={`/project/${project.id + 1}`}
+                  className="project-navigation-link next d-flex justify-content-end"
+                >
+                  <div className="px-4">
+                    <h4>{projects[project.id].title}</h4>
+                    <p>Next Project</p>
+                  </div>
+                  <span className="arrow">
+                    <GrNext />
+                  </span>
+                </Link>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-5">
+          <CallToAction />
+        </div>
       </div>
     </section>
   );
