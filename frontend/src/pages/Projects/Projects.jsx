@@ -125,7 +125,7 @@ const Projects = ({ projects }) => {
           </div>
         </div>
 
-        <div className="mt-5">
+        <div className="pt-5">
           <CallToAction />
         </div>
       </div>

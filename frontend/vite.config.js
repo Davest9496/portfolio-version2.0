@@ -13,6 +13,11 @@ export default defineConfig({
           @import "./src/styles/_typography.scss";
         `
       }
-    }
-  }
+    },
+  },
+  server: {
+    proxy: {
+      '/api': 'http://localhost:3001',
+    },
+  },
 })
