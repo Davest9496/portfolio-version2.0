@@ -26,7 +26,8 @@
   }
 
   &:disabled {
-    background-color: $btn-primary-disabled;
+    background-color: $btn-primary-disabled !important;
+    color: $primary-text-color !important;
     cursor: not-allowed;
   }
 

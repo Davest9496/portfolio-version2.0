@@ -1,47 +1,48 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Header.scss";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../../assets/D-2.svg";
+import "./Header.scss";
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNavbar = () => setIsOpen(!isOpen);
+
   return (
     <header className="header">
-      <nav className="navbar navbar-expand-lg navbar-light ">
-        <div className="container">
-          <Link className="navbar-brand" to="/">
-            <img className="header-logo" src={logo} alt="Profile picture of Dave Ejezie" style={{ width: '2em', height: '2em', color: 'red' }} />
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+      <Navbar bg="light" expand="lg" expanded={isOpen} fluid>
+        <Container fluid className="container">
+          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
+            <img
+              src={logo}
+              alt="Profile picture of Dave Ejezie"
+              className="header-logo d-inline-block align-top"
+            />
+          </Navbar.Brand>
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            onClick={toggleNavbar}
           >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/portfolio">
-                  Portfolio
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/contact">
-                  Contact Me
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+            <span
+              className={`navbar-toggler-icon ${isOpen ? "open" : ""}`}
+            ></span>
+          </Navbar.Toggle>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto">
+              <Nav.Link as={Link} to="/">
+                Home
+              </Nav.Link>
+              <Nav.Link as={Link} to="/portfolio">
+                Portfolio
+              </Nav.Link>
+              <Nav.Link as={Link} to="/contact">
+                Contact Me
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </header>
   );
 }

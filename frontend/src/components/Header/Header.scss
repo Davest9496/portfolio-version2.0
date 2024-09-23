@@ -1,74 +1,140 @@
 .header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    margin-bottom: 2em;
-    @include box-shadow();
-    @include transition();
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  margin-bottom: 2em;
+  width: 100%;
+  @include box-shadow();
+  @include transition();
 
-    &-logo {
-        width: 40px;
-        height: 80px;
-        border-radius: 50%;
-        object-fit: cover;
+  &-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .navbar {
+    background-color: $background-color;
+    width: 100%;
+
+    .navbar-brand {
+      color: $neutral-black;
+      transition: color 0.2s ease;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: $primary-color;
+      }
     }
+
+    .nav-link {
+      color: rgba($primary-text-color, 0.8);
+      font-weight: 200;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-left: 1.5rem;
+      position: relative;
+      transition: color 0.2s ease;
+      display: inline-block;
+
+      &:hover,
+      &:focus {
+        color: $primary-color;
+      }
+
+    //   &::after {
+    //     content: '';
+    //     position: absolute;
+    //     width: 0;
+    //     height: 1px;
+    //     bottom: 0;
+    //     left: 0;
+    //     background-color: $primary-color;
+    //     transition: width 0.2s ease;
+    //   }
+
+    //   &:hover::after,
+    //   &:focus::after {
+    //     width: 100%;
+    //   }
+    }
+
+    .navbar-toggler {
+      border: none;
+      padding: 0;
+      width: 30px;
+      height: 30px;
+      position: relative;
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      .navbar-toggler-icon {
+        background-image: none;
+        position: relative;
+        transition: background-color 0.2s ease;
+
+        &, &::before, &::after {
+          width: 30px;
+          height: 2px;
+          background-color: $primary-text-color;
+          display: inline-block;
+        }
+
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          transition: all 0.2s ease;
+        }
+
+        &::before {
+          top: -8px;
+        }
+
+        &::after {
+          bottom: -8px;
+        }
+
+        &.open {
+          background-color: transparent;
+
+          &::before {
+            top: 0;
+            transform: rotate(45deg);
+          }
+
+          &::after {
+            bottom: 0;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 1em;
 
     .navbar {
-        background-color: $background-color;
-        padding: 0.5rem 1rem;
+      padding-left: 15px;
+      padding-right: 15px;
 
-        .navbar-brand {
-            color: $neutral-black;
-            display: flex;
-            align-items: center;
-            transition: color 0.2s ease;
-
-            &:hover {
-                color: $primary-color;
-            }
-        }
-
-        .nav-link {
-            padding: 0 !important;
-            color: rgb($primary-text-color, .8);
-            font-weight: 200;
-            text-transform: uppercase;
-            letter-spacing: 0.07em;
-            margin-left: 1.5rem;
-            position: relative;
-            transition: color 0.2s ease;
-            
-            &:hover,
-            &:focus {
-                color: $primary-color;
-            }
-
-            &::after {
-                content: '';
-                position: absolute;
-                width: 0;
-                height: 1px;
-                bottom: 0;
-                left: 0;
-                background-color: $primary-color;
-                @include transition();
-            }
-
-            &:hover::after,
-            &:focus::after {
-                width: 100%;
-            }
-        }
+      .nav-link {
+        margin-left: 0;
+        margin-top: 0.5rem;
+        width: 100%;
+      }
     }
 
-    @media (max-width: 768px) {
-        .navbar {
-            padding: 0.5rem;
-
-            .nav-link {
-                margin-left: 0;
-                margin-top: 0.5rem;
-            }
-        }
+    &-logo {
+      width: 30px;
+      height: 30px;
     }
+  }
 }
