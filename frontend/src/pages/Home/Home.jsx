@@ -19,16 +19,11 @@ function Home() {
         <section className="hero">
           <div className="hero-content">
             <h1 className="hero-text">
-              Hey, I am{" "}
-              <span className="hero-name">
-                Dave
-                <br /> Ejezie
-              </span>{" "}
-              and I<br /> love building pixel
-              <br /> perfect websites!
+              Hey, I am <span className="hero-name">Dave Ejezie</span> and I
+              love building pixel perfect websites!
             </h1>
             <Button
-              className="btn-primary align-bottom-left"
+              className="btn-primary"
               onClick={scrollToAbout}
               type="button"
               disabled={false}
@@ -37,6 +32,7 @@ function Home() {
               <PiArrowFatLinesDownThin className="btn-icon" />
             </Button>
           </div>
+          <div className="hero-image">{/* Add your image here */}</div>
         </section>
       </div>
       <div className="container">

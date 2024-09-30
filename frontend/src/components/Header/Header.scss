@@ -2,14 +2,13 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  margin-bottom: 2em;
   width: 100%;
   @include box-shadow();
   @include transition();
 
   &-logo {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     object-fit: cover;
     display: inline-block;
@@ -19,6 +18,8 @@
   .navbar {
     background-color: $background-color;
     width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
 
     .navbar-brand {
       color: $neutral-black;
@@ -36,11 +37,12 @@
       font-weight: 200;
       text-transform: uppercase;
       letter-spacing: 0.07em;
-      margin-left: 1.5rem;
+      margin-top: 0.5rem;
       padding-right: 0 !important;
       position: relative;
       transition: color 0.2s ease;
-      display: inline-block;
+      display: block;
+      width: 100%;
 
       &:hover,
       &:focus {
@@ -103,23 +105,25 @@
     }
   }
 
-  @media (max-width: 768px) {
-    margin-bottom: 1em;
-
-    .navbar {
-      padding-left: 15px;
-      padding-right: 15px;
-
-      .nav-link {
-        margin-left: 0;
-        margin-top: 0.5rem;
-        width: 100%;
-      }
-    }
+  // Tablet and desktop styles
+  @media (min-width: 769px) {
+    margin-bottom: 2em;
 
     &-logo {
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .navbar {
+      padding-left: 0;
+      padding-right: 0;
+
+      .nav-link {
+        margin-left: 1.5rem;
+        margin-top: 0;
+        width: auto;
+        display: inline-block;
+      }
     }
   }
 }

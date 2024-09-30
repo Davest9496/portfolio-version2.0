@@ -1,21 +1,35 @@
+$hero-background-desktop: url('../../assets/homepage/desktop/image-homepage-hero@2x.jpg');
+$hero-background-tablet: url('../../assets/homepage/tablet/image-homepage-hero@2x.jpg');
+$hero-background-mobile: url('../../assets/homepage/mobile/image-homepage-hero@2x.jpg');
+
+
 .home {
   .hero {
     position: relative;
-    height: 80vh;
     overflow: hidden;
-    @include flex-center();
+    display: flex;
+    flex-direction: column;
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url('../../assets/Bitmap@2x.svg');
+    &-image {
+      position: relative;
+      width: 100%;
+      padding-top: 100%; // This creates a 1:1 aspect ratio
+      background-image: $hero-background-mobile;
       background-size: cover;
       background-position: center;
+      order: 1;
       z-index: 1;
+    }
+
+    &-content {
+      position: relative;
+      z-index: 2;
+      text-align: left;
+      color: $neutral-black;
+      background-color: $neutral-white;
+      // padding: 2.5rem !important;
+      order: 2;
+      width: 100%;
     }
 
     &-name {
@@ -23,19 +37,50 @@
     }
 
     .hero-text {
-        margin-right: 2em;
-        margin-bottom: 1em !important;
+      margin-bottom: 2em;
+      // background-color: red;
+      // width: 100%;
     }
 
-    .hero-content {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      z-index: 2;
-      text-align: left;
-      color: $neutral-black;
-      background-color: $neutral-white;
-      padding: 4rem 0;
+    // Tablet styles
+    @media (min-width: 768px) {
+      height: 80vh;
+      flex-direction: column;
+
+      &-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        padding-top: 0; // Remove the padding-top
+        background-image: $hero-background-tablet;
+      }
+
+      &-content {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 60%; // Adjust as needed
+        padding-top: 3rem;
+        padding-bottom: 1rem;
+      }
+
+      // .hero-text {
+        
+      // }
+    }
+
+    // Desktop styles
+    @media (min-width: 1025px) {
+      &-image {
+        background-image: $hero-background-desktop;
+      }
+
+      &-content {
+        width: 40%; // Adjust as needed
+      }
     }
   }
 }

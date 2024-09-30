@@ -96,10 +96,10 @@ const Projects = ({ projects }) => {
                   to={`/project/${project.id - 1}`}
                   className="project-navigation-link prev"
                 >
-                  <span className="arrow">
+                  <span className="arrow prev-arrow">
                     <GrPrevious />
                   </span>
-                  <div className="px-4">
+                  <div className="px-4 prev-content">
                     <h4>{projects[project.id - 2].title}</h4>
                     <p>Previous Project</p>
                   </div>
@@ -112,11 +112,11 @@ const Projects = ({ projects }) => {
                   to={`/project/${project.id + 1}`}
                   className="project-navigation-link next d-flex justify-content-end"
                 >
-                  <div className="px-4">
+                  <div className="px-4 next-content">
                     <h4>{projects[project.id].title}</h4>
                     <p>Next Project</p>
                   </div>
-                  <span className="arrow">
+                  <span className="arrow next-arrow">
                     <GrNext />
                   </span>
                 </Link>
