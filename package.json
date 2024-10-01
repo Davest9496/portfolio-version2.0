@@ -2,10 +2,15 @@
   "name": "portfolio-version2",
   "version": "1.0.0",
   "engines": {
-    "node": "20.10.0" 
+  "node": "20.10.0",
+    "npm": "10.2.3"
   },
   "scripts": {
     "start": "cd backend && npm start",
-    "heroku-postbuild": "cd frontend && npm install && npm run build && cd ../backend && npm install"
+    "heroku-postbuild": "cd frontend && npm install && npx vite build && cd ../backend && npm install"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.2",
+    "vite": "^5.4.8"
   }
 }
