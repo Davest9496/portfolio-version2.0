@@ -24,8 +24,6 @@ function Forms() {
 
     try {
       console.log("Sending form data:", formData);
-      // const apiUrl = import.meta.env.VITE_API_URL;
-      // console.log("API URL:", apiUrl);
 
       const response = await fetch(`/api/send-message`, {
         method: "POST",

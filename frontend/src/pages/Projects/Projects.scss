@@ -1,5 +1,6 @@
 .project {
   &-details {
+    padding: $padding-x;
     &-text {
       @include flex-column;
       width: 70%;

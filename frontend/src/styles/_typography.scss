@@ -1,5 +1,5 @@
 :root {
-  --base-font-size: 16px;
+  --base-font-size: 15px;
   --scale-ratio: 1.2;
   --h1-font-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio) * var(--scale-ratio));
   --h2-font-size: calc(var(--base-font-size) * var(--scale-ratio) * var(--scale-ratio));
@@ -21,7 +21,6 @@ body {
   font-weight: 300;
   line-height: 1.6;
   font-size: 1rem;
-  /* Fluid typography */
   font-size: calc(0.9rem + 0.5vw);
 }
 

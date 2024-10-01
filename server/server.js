@@ -5,6 +5,21 @@ require("dotenv").config();
 
 const app = express();
 app.use(bodyParser.json());
+const path = require("path");
+const cors = require("cors");
+
+// Enable CORS for all routes
+app.use(cors());
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+});
+
 
 // Create a transporter using SMTP
 const transporter = nodemailer.createTransport({

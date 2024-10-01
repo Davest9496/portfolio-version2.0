@@ -22,6 +22,11 @@
         box-sizing: border-box;
         outline: none !important;
         @include transition();
+
+         &::placeholder {
+            color: rgba($primary-text-color, 0.5) !important;
+            font-style: italic;
+        }
     }
 
     &-control:focus {
