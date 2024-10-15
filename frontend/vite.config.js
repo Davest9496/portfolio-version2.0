@@ -1,18 +1,16 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from "path"
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "path";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   base: "/",
   build: {
-  outDir: "dist",
+    outDir: "dist",
   },
   css: {
     preprocessorOptions: {
@@ -21,10 +19,18 @@ export default defineConfig({
           @import "./src/styles/_variables.scss";
           @import "./src/styles/_mixins.scss";
           @import "./src/styles/_typography.scss";
-          @import "bootstrap/scss/bootstrap";
         `,
-        includePaths: ["node_modules", path.resolve(__dirname, "src/styles")],
+        includePaths: [
+          "node_modules",
+          path.resolve(__dirname, "src/styles"),
+          path.resolve(__dirname, "node_modules"),
+        ],
       },
+    },
+  },
+  resolve: {
+    alias: {
+      "~bootstrap": path.resolve(__dirname, "node_modules/bootstrap"),
     },
   },
   server: {
