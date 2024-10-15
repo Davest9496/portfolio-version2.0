@@ -1,15 +1,17 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 require("dotenv").config();
 
 const app = express();
-app.use(bodyParser.json());
+const PORT = process.env.PORT || 3001;
+
 const path = require("path");
 const cors = require("cors");
 
 // Enable CORS for all routes
 app.use(cors());
+app.use(express.json());
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
@@ -58,8 +60,6 @@ app.post("/api/send-message", async (req, res) => {
     res.status(500).json({ error: "Error sending message" });
   }
 });
-
-const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
