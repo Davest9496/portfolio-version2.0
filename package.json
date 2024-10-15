@@ -6,9 +6,12 @@
     "npm": "10.2.3"
   },
   "scripts": {
-    "start": "cd backend && npm start",
-    "heroku-postbuild": "cd frontend && npm install --include=dev && npx vite build && cd ../backend && npm install",
-    "heroku-prebuild": "npm install -g vite"
+    "start": "node backend/server.js",
+    "build": "cd frontend && npm install && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "dependencies": {
+    "express": "^4.21.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.2",
