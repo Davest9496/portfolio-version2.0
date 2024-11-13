@@ -1,6 +1,6 @@
 .project {
   &-details {
-    padding: $padding-x;
+    padding: $gutter-x;
     &-text {
       @include flex-column;
       width: 70%;

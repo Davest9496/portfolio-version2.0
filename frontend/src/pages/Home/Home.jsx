@@ -32,12 +32,12 @@ function Home() {
               <PiArrowFatLinesDownThin className="btn-icon" />
             </Button>
           </div>
-          <div className="hero-image">{/* Add your image here */}</div>
+          <div className="hero-image"></div>
         </section>
-      </div>
-      <div className="container">
-        <About id="about" />
-        <CallToAction />
+        <section>
+          <About id="about" />
+          <CallToAction />
+        </section>
       </div>
     </div>
   );

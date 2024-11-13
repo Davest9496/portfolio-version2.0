@@ -1,10 +1,9 @@
-$hero-background-desktop: url('../../assets/homepage/desktop/image-homepage-hero@2x.jpg');
-$hero-background-tablet: url('../../assets/homepage/tablet/image-homepage-hero@2x.jpg');
-$hero-background-mobile: url('../../assets/homepage/mobile/image-homepage-hero@2x.jpg');
-
+$hero-background-desktop: url("../../assets/homepage/desktop/image-homepage-hero@2x.jpg");
+$hero-background-tablet: url("../../assets/homepage/tablet/image-homepage-hero@2x.jpg");
+$hero-background-mobile: url("../../assets/homepage/mobile/image-homepage-hero@2x.jpg");
 
 .home {
-  padding: $padding-x;
+  // padding: $padding-x;
   .hero {
     position: relative;
     overflow: hidden;
@@ -37,7 +36,7 @@ $hero-background-mobile: url('../../assets/homepage/mobile/image-homepage-hero@2
     }
 
     .hero-text {
-      margin-bottom: 2em;
+      margin-bottom: 1.5em;
     }
 
     // Tablet styles
@@ -60,9 +59,8 @@ $hero-background-mobile: url('../../assets/homepage/mobile/image-homepage-hero@2
         position: absolute;
         left: 0;
         bottom: 0;
-        width: 60%; // Adjust as needed
+        width: 60%;
         padding-top: 3rem;
-        padding-bottom: 1rem;
       }
     }
 
@@ -73,7 +71,7 @@ $hero-background-mobile: url('../../assets/homepage/mobile/image-homepage-hero@2
       }
 
       &-content {
-        width: 40%; 
+        width: 40%;
       }
     }
   }

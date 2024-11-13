@@ -14,13 +14,13 @@ const Portfolio = () => {
   }
 
   return (
-    <section className="container">
-      <div className="container-fluid" id="portfolio">
+    <div className="container">
+      <section className="container-fluid" id="portfolio">
         {projects.map((project, index) => (
           <PortfolioItem key={index} {...project} reverse={index % 2 !== 0} />
         ))}
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
