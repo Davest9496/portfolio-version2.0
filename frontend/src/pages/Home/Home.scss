@@ -3,7 +3,7 @@ $hero-background-tablet: url("../../assets/homepage/tablet/image-homepage-hero@2
 $hero-background-mobile: url("../../assets/homepage/mobile/image-homepage-hero@2x.jpg");
 
 .home {
-  // padding: $padding-x;
+  padding: 0 3%;
   .hero {
     position: relative;
     overflow: hidden;
@@ -13,7 +13,7 @@ $hero-background-mobile: url("../../assets/homepage/mobile/image-homepage-hero@2
     &-image {
       position: relative;
       width: 100%;
-      padding-top: 100%; // This creates a 1:1 aspect ratio
+      padding-top: 100%;
       background-image: $hero-background-mobile;
       background-size: cover;
       background-position: center;
