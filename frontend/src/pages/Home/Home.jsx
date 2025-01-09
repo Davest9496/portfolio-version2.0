@@ -20,7 +20,7 @@ function Home() {
           <div className="hero-content">
             <h1 className="hero-text">
               Hey, I am <span className="hero-name">Dave Ejezie</span> and I
-              love building pixel perfect websites!
+              build pixel perfect websites!
             </h1>
             <Button
               className="btn-primary"
